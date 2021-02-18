@@ -41,13 +41,17 @@ class ViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: Any) {
         
         if currentIndex < favoriteFoodsArray.count {
+            //determining where in the loop itieration the app is currently running
+            
         //set bottomLabeltext to item in array at currentIndex
             bottomLabel.text = favoriteFoodsArray[currentIndex]
+            //changes the text in the bottomlabel to the corresponding food name in the array corresponding to the indexed position in the loop
+            
             //set title of button to "Next"
             buttonLabel.setTitle ("Next", for: UIControl.State.normal)
-        
+        //changes the text in the button to "Next" once the button is pressed
             currentIndex+=1
-        
+        //increases the currentIndex value by 1 to advance to the next string in the array
         
         
         
@@ -56,7 +60,9 @@ class ViewController: UIViewController {
         {
             
             print("Button has been disabled")
+            // prints in the monitor that "Button has been disabled" when the loops count has reached 1 value higher than the amount of strings in the array
     (buttonLabel!).isEnabled=false
+            //disables the button
 }
 
 }
