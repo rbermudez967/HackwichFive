@@ -19,7 +19,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var topLabel: UILabel!
     @IBOutlet weak var bottomLabel: UILabel!
     
-
+//IBOutlet for button to access properties
+    
+    @IBOutlet weak var buttonLabel: UIButton!
     
     
     override func viewDidLoad() {
@@ -31,10 +33,31 @@ class ViewController: UIViewController {
         //set bottom label to display item at "current index" upon launch at app
         
         bottomLabel.text = favoriteFoodsArray[currentIndex]
+        
     }
 
-
+//part 8
     
-    
+    @IBAction func buttonPressed(_ sender: Any) {
+        
+        if currentIndex < favoriteFoodsArray.count {
+        //set bottomLabeltext to item in array at currentIndex
+            bottomLabel.text = favoriteFoodsArray[currentIndex]
+            //set title of button to "Next"
+            buttonLabel.setTitle ("Next", for: UIControl.State.normal)
+        
+            currentIndex+=1
+        
+        
+        
+        
+    }
+        else
+        {
+            
+            print("Button has been disabled")
+    (buttonLabel!).isEnabled=false
 }
 
+}
+}
